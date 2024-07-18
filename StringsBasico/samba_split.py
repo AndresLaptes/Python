@@ -5,8 +5,10 @@
 
 def run(smb_path: str) -> tuple:
     # TU CÓDIGO AQUÍ
-    host = smb_path.partition('/')
-    path = smb_path
+    partes: str = smb_path.strip('//')
+    host = partes[0]
+    path = partes[1].rsplit('/')
+    
 
     return host, path
 
